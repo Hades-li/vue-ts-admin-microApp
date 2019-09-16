@@ -1,7 +1,7 @@
-const packageName = 'vueapp'
+const packageName = 'vueapp2'
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '':'/vueStatic',
+  publicPath: process.env.NODE_ENV === 'production' ? '':'//localhost:8082',
   configureWebpack: (config) => {
     config.output.library = packageName
     config.output.libraryTarget = 'umd'
@@ -15,7 +15,7 @@ module.exports = {
   },
 
   devServer: {
-    port: 8081,
+    port: 8082,
     headers: {
       "Access-Control-Allow-Origin": "http://localhost:8080",
       "Access-Control-Allow-Credentials": "true",

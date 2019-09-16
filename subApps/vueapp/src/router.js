@@ -6,7 +6,7 @@ Vue.use(Router)
 
 export default new Router({
   mode: 'history',
-  base: '/vue1',
+  base: '/vue',
   routes: [
     {
       path: '/',

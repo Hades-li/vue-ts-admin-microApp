@@ -1,29 +1,13 @@
-# vue-test
+# qiankun-vue
 
-## Project setup
-```
-npm install
-```
+## 说明
+项目基座和子项目均由vue-cli进行构建
 
-### Compiles and hot-reloads for development
+## 安装
+根目录下执行`npm install`, subApps文件夹下的子项目，分别执行`npm install`
+
+
+### 开发模式
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

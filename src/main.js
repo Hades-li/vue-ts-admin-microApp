@@ -1,10 +1,10 @@
 import Vue from 'vue';
-import { registerMicroApps, runDefaultMountEffects, start } from 'qiankun';
+import { registerMicroApps, setDefaultMountApp, start } from 'qiankun';
 import element from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 // import App from './App.vue';
 import Framework from './Framework.vue';
-// import router from './router';
+import router from './router';
 // import store from './store';
 
 Vue.config.productionTip = false;
@@ -13,6 +13,16 @@ Vue.use(element);
 
 let lastContent = null;
 let app = null;
+
+function genActiveRule(routerPrefix, mode = 'hash') {
+  return (location) => {
+    if (mode === 'hash') {
+      return location.hash.startsWith(routerPrefix);
+    } else {
+      return location.pathname.startsWith(routerPrefix);
+    }
+  };
+}
 
 function render({ appContent, loading }) {
   console.log(appContent);
@@ -25,7 +35,7 @@ function render({ appContent, loading }) {
   if (!app) {
     app = new Vue({
       el: '#main',
-      // router,
+      router,
       data() {
         return {
           content: appContent,
@@ -47,10 +57,6 @@ function render({ appContent, loading }) {
   }
 }
 
-function genActiveRule(routerPrefix) {
-  return location => location.pathname.startsWith(routerPrefix);
-}
-
 let microInstance = false;
 window.addEventListener('load', () => {
   if (microInstance) {
@@ -63,17 +69,17 @@ window.addEventListener('load', () => {
       {
         name: 'vue app',
         // entry: { scripts: ['//localhost:8081/main.js'] },
-        entry: '//localhost:8081',
+        entry: process.env.NODE_ENV === 'development' ? '//localhost:9001' : '//localhost:9101',
         render,
-        activeRule: genActiveRule('/vue'),
+        activeRule: genActiveRule('#/vue1'),
       },
       {
         name: 'vue app 2',
         // entry: { scripts: ['//localhost:8081/main.js'] },
-        entry: '//localhost:8082',
+        entry: process.env.NODE_ENV === 'development' ? '//localhost:9002' : '//localhost:9102',
         render,
-        activeRule: genActiveRule('/vue2'),
-      },
+        activeRule: genActiveRule('#/vue2'),
+      }
     ],
     {
       beforeLoad: [app => {
@@ -87,22 +93,6 @@ window.addEventListener('load', () => {
       }],
     },
   );
-  runDefaultMountEffects('/vue1');
-
-  start({
-    prefetch: true,
-    jsSandbox: true
-  });
+  // start({jsSandbox: false});
+  start()
 });
-
-/*new Vue({
-  el: '#main',
-  router,
-  render(h) {
-    return h(Framework, {
-      props: {
-
-      },
-    });
-  },
-});*/

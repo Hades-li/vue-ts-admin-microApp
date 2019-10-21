@@ -5,7 +5,7 @@ import Framework from './Framework';
 Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history',
   // base: process.env.BASE_URL,
   routes: [
     {
@@ -13,5 +13,25 @@ export default new Router({
       name: 'Framework',
       component: Framework,
     },
-  ],
+    {
+      path: '/vue1',
+      name: 'Framework',
+      component: Framework,
+    },
+    {
+      path: '/vue1/about',
+      name: 'Framework',
+      component: Framework,
+    },
+    {
+      path: '/vue2',
+      name: 'Framework',
+      component: Framework,
+    },
+    {
+      path: '/vue2/about',
+      name: 'Framework',
+      component: Framework,
+    },
+  ]
 });

@@ -4,17 +4,17 @@ import Home from './views/Home.vue'
 
 Vue.use(Router)
 console.log(process.env.NODE_ENV)
-export default new Router({
-  mode: 'history',
-  base: '/vue2',
+const router = new Router({
+  // mode: 'history',
+  // base: '/vue2/',
   routes: [
     {
-      path: '/',
+      path: '/vue2',
       name: 'home',
       component: Home
     },
     {
-      path: '/about',
+      path: '/vue2/about',
       name: 'about',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
@@ -23,3 +23,10 @@ export default new Router({
     }
   ]
 })
+
+export const unBeforeEach = router.beforeEach((to, from, next) => {
+  console.log('vue2 路由守卫')
+  next()
+})
+
+export default router

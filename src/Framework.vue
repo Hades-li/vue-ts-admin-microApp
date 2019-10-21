@@ -2,33 +2,31 @@
   <section>
     <el-container>
       <el-header>
-        头部
+        <el-menu
+          mode="horizontal"
+          default-active="2"
+          class="el-menu-vertical-demo"
+          @open="handleOpen"
+          @close="handleClose">
+          <el-submenu index="1">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>app1</span>
+            </template>
+            <el-menu-item index="1-1" @click="goto('vue app', '/vue1')">home</el-menu-item>
+            <el-menu-item index="1-2" @click="goto('vue app', '/vue1/about')">about</el-menu-item>
+          </el-submenu>
+          <el-submenu index="2">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>app2</span>
+            </template>
+            <el-menu-item index="2-1" @click="goto('vue app', '/vue2')">home</el-menu-item>
+            <el-menu-item index="2-2" @click="goto('vue app', '/vue2/about')">about</el-menu-item>
+          </el-submenu>
+        </el-menu>
       </el-header>
       <el-container>
-        <el-aside width="200px">
-          <el-menu
-            default-active="2"
-            class="el-menu-vertical-demo"
-            @open="handleOpen"
-            @close="handleClose">
-            <el-submenu index="1">
-              <template slot="title">
-                <i class="el-icon-location"></i>
-                <span>app1</span>
-              </template>
-              <el-menu-item index="1-1" @click="goto('vue app', '/vue1')">home</el-menu-item>
-              <el-menu-item index="1-2" @click="goto('vue app', '/vue1/about')">about</el-menu-item>
-            </el-submenu>
-            <el-submenu index="2">
-              <template slot="title">
-                <i class="el-icon-location"></i>
-                <span>app2</span>
-              </template>
-              <el-menu-item index="2-1" @click="goto('vue app', '/vue2')">home</el-menu-item>
-              <el-menu-item index="2-2" @click="goto('vue app', '/vue2/about')">about</el-menu-item>
-            </el-submenu>
-          </el-menu>
-        </el-aside>
         <el-main>
           <div class="appContainer" v-html="content">content</div>
         </el-main>
@@ -55,8 +53,8 @@ export default {
       window.history.pushState({}, 'title', '/vue2');
       // this.$router.push('/vue2')
     },
-    goto(title, href) {
-      window.history.pushState({}, title, href);
+    goto(title, path) {
+      this.$router.push(path)
     },
   },
 };
@@ -93,6 +91,6 @@ export default {
   }
 
   .appContainer {
-    margin-top: 50px;
+    /*height: 900px;*/
   }
 </style>

@@ -4,24 +4,20 @@ import router from './router'
 
 Vue.config.productionTip = false
 
-let instance = null;
+let instance = new Vue({
+  router,
+  render: h => h(App),
+}).$mount()
 
 export async function bootstrap() {
-  console.log('react app bootstraped');
+  console.log('app2 bootstraped');
 }
 
 export async function mount(props) {
-  console.log('props from main framework', props);
-  instance = new Vue({
-    el: '#vueRoot2',
-    router,
-    render: h => h(App),
-  });
-  // console.log(instance)
+  console.log('app2 from main framework', props);
+  document.getElementById('vueRoot2').appendChild(instance.$el)
 }
 
 export async function unmount() {
   console.log('vueapp2 unmount')
-  instance.$destroy();
-  instance = null;
 }

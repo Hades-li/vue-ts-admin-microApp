@@ -1,37 +1,23 @@
-const packageName = 'main';
+const baseUrl = 'http://pre.mgr.s-gsun.com/'
 
 module.exports = {
-  /*configureWebpack: (config) => {
-    config.output.library = packageName;
-    config.output.libraryTarget = 'umd';
-    config.output.jsonpFunction = `webpackJsonp_${packageName}`;
-    if (process.env.NODE_ENV === 'production') {
-      // 为生产环境修改配置...
-    } else {
-      // 为开发环境修改配置...
-    }
-  },*/
   devServer: {
-    port: 8080,
-   /* proxy: {
-      '/vue': {
-        target: 'http://localhost:8081',
+    port: 9000,
+    proxy: {
+      '/fs': {
+        target: baseUrl,
         changeOrigin: true,
-        ws: true,
+        ws: false,
         secure: false,
-        /!*pathRewrite: {
-          '/vueStatic': '/',
-        },*!/
+        pathRewrite: {
+          '^/fs': '/fs'
+        },
       },
-      '/2vue2': {
-        target: 'http://localhost:8082',
-        changeOrigin: true,
-        ws: true,
-        secure: false,
-        /!*pathRewrite: {
-          '/vueStatic': '/',
-        },*!/
-      },
-    },*/
+    },
   },
+  chainWebpack(config) {
+    config.externals({
+      Vue: 'Vue'
+    })
+  }
 };

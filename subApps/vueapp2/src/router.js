@@ -26,7 +26,9 @@ const router = new Router({
 
 export const unBeforeEach = router.beforeEach((to, from, next) => {
   console.log('vue2 路由守卫')
-  next()
+  if (to.path.includes('/vue2')) {
+    next()
+  }
 })
 
 export default router

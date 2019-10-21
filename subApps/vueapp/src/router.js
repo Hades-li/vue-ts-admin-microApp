@@ -26,7 +26,9 @@ const router = new Router({
 
 export const unBeforeEach = router.beforeEach((to, from, next) => {
   console.log('vue1 路由守卫')
-  next()
+  if (to.path.includes('/vue1')) {
+    next()
+  }
 })
 
 

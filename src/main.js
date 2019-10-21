@@ -25,7 +25,7 @@ function genActiveRule(routerPrefix, mode = 'hash') {
 }
 
 function render({ appContent, loading }) {
-  console.log(appContent);
+  // console.log(appContent);
   if (lastContent === appContent) {
     return;
   }

@@ -1,13 +1,16 @@
-# qiankun-vue
+# vue-ts-admin-microApp
 
 ## 说明
-项目基座和子项目均由vue-cli进行构建
+中后台微前端应用项目模板，基于vue-typescript-admin-template模板修改而来。微前端部分采用了qiankun微前端框架。
 
 ## 安装
-根目录下执行`npm install`, subApps文件夹下的子项目，分别执行`npm install`
+- 子项目vue-dashboard: ```yarn install or npm install```
+- 子项目vue-dashboard: ```yarn install or npm install```
+- 主项目vue-main: ```yarn install or npm install```
 
 
 ### 开发模式
+在每个项目上运行
 ```
-npm run serve
+npm run dev
 ```

@@ -5,7 +5,7 @@
 
 ## 安装
 - 子项目vue-dashboard: ```yarn install or npm install```
-- 子项目vue-dashboard: ```yarn install or npm install```
+- 子项目vue-example: ```yarn install or npm install```
 - 主项目vue-main: ```yarn install or npm install```
 
 

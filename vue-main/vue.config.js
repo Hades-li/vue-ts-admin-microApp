@@ -2,6 +2,9 @@ const path = require('path')
 const name = 'vue admin framework'
 
 module.exports = {
+  devServer: {
+    port: 5000
+  },
   publicPath: process.env.NODE_ENV === 'production' ? '/vue-typescript-admin-template/' : '/', // TODO: Remember to change this to fit your need
   lintOnSave: process.env.NODE_ENV === 'development',
   pwa: {

@@ -6,6 +6,9 @@ const port = 5002
 module.exports = {
   devServer: {
     port,
+    /* headers: {
+      'Access-Control-Allow-Origin': '*',
+    }, */
     before(app, server) {
       app.use(cors())
     }

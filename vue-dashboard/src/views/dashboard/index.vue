@@ -9,6 +9,14 @@
         :key="role"
       >{{ role }}</span>
     </div>
+    <div class="push-view">
+      <router-link
+        class="link"
+        to="dashboard/detail"
+      >
+        push to detail
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -16,9 +24,9 @@
 import { Component, Vue } from 'vue-property-decorator'
 import { UserModule } from '@/store/modules/user'
 
-@Component({
-  name: 'Dashboard'
-})
+  @Component({
+    name: 'Dashboard'
+  })
 export default class extends Vue {
   get name() {
     return UserModule.name
@@ -27,19 +35,22 @@ export default class extends Vue {
   get roles() {
     return UserModule.roles
   }
-  
 }
 </script>
 
 <style lang="scss" scoped>
-.dashboard {
-  &-container {
-    margin: 30px;
+  .dashboard {
+    &-container {
+      margin: 30px;
+    }
+
+    &-text {
+      font-size: 30px;
+      line-height: 46px;
+    }
   }
 
-  &-text {
-    font-size: 30px;
-    line-height: 46px;
+  .link {
+    text-decoration: underline;
   }
-}
 </style>

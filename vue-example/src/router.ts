@@ -61,6 +61,7 @@ export default new Router({
       },
       children: [
         {
+          name: 'tree',
           path: 'tree',
           component: () => import(/* webpackChunkName: "tree" */ '@/views/tree/index.vue'),
           meta: {
@@ -69,6 +70,7 @@ export default new Router({
           }
         },
         {
+          name: 'table',
           path: 'table',
           component: () => import(/* webpackChunkName: "table" */ '@/views/table/index.vue'),
           meta: {

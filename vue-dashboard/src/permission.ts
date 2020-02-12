@@ -5,6 +5,13 @@ import { Message } from 'element-ui'
 import { Route } from 'vue-router'
 import { UserModule } from '@/store/modules/user'
 
+declare module 'vue/types/vue' {
+  interface Vue {
+    $isFramework: boolean,
+    $mainApp: Vue
+  }
+}
+
 NProgress.configure({ showSpinner: false })
 
 const whiteList = ['/login']
@@ -57,4 +64,5 @@ router.afterEach((to: Route) => {
 
   // set page title
   document.title = to.meta.title
+  router.app.$mainApp.$emit('openTag', to)
 })

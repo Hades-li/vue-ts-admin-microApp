@@ -15,7 +15,7 @@ export default class extends Vue {
   mounted() {
     // console.log(this.$qiankunVue)
     this.$renderSuccess((html) => {
-      console.log(html)
+      // console.log(html)
     })
     this.$afterMounted((app) => {
       console.log(app)

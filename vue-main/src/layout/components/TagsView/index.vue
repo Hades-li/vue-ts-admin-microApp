@@ -70,6 +70,7 @@ export default class extends Vue {
   private left: number = 0
   private selectedTag: ITagView = {}
   private affixTags: ITagView[] = []
+  private curTag: ITagView = {} // 当前对应的tag
 
   get visitedViews() {
     return TagsViewModule.visitedViews
@@ -81,8 +82,9 @@ export default class extends Vue {
   }
 
   @Watch('$route')
-  private onRouteChange() {
-    this.addTags()
+  private onRouteChange(route: Route) {
+    console.log(route)
+    // this.addTags()
     // this.moveToCurrentTag()
   }
 
@@ -97,11 +99,14 @@ export default class extends Vue {
 
   mounted() {
     // this.initTags()
-    this.addTags()
+    // this.addTags()
+    this.$root.$on('openTag', (to: Route) => {
+      this.addTagsFromSubApp(to)
+    })
   }
 
   private isActive(route: ITagView) {
-    return route.path === this.$route.path
+    return route.path === this.curTag.path
   }
 
   private isAffix(tag: ITagView) {
@@ -139,7 +144,21 @@ export default class extends Vue {
       }
     }
   }
-
+  // tags由子项目来添加
+  private addTagsFromSubApp(route: Route) {
+    const tag = {
+      name: route.name,
+      path: route.path,
+      fullPath: route.fullPath,
+      query: Object.assign({}, route.query),
+      meta: Object.assign({}, route.meta)
+    }
+    if (tag.name) {
+      TagsViewModule.addView(tag)
+      this.moveToCurrentTag()
+      this.curTag = tag
+    }
+  }
   private addTags() {
     const { name } = this.$route
     if (name) {
@@ -149,8 +168,10 @@ export default class extends Vue {
   }
 
   private moveToCurrentTag() {
-    const tags = this.$refs.tag as any[] // TODO: better typescript support for router-link
+    debugger
     this.$nextTick(() => {
+      const tags = this.$refs.tag as any[] // TODO: better typescript support for router-link
+
       for (const tag of tags) {
         if ((tag.to as ITagView).path === this.$route.path) {
           (this.$refs.scrollPane as ScrollPane).moveToTarget(tag as any)

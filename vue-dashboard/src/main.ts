@@ -22,10 +22,11 @@ Vue.use(SvgIcon, {
 
 Vue.config.productionTip = false
 
+const name = 'dashboard'
 let app: Vue | undefined = undefined
 
 export async function bootstrap() {
-  console.log('vue_1应用初始化')
+  console.log(`${name}应用初始化`)
 }
 
 /**
@@ -49,7 +50,7 @@ export async function mount(props: any) {
  * 应用每次 切出/卸载 会调用的方法，通常在这里我们会卸载子应用的应用实例
  */
 export async function unmount() {
-  console.log('Vue_1应用卸载')
+  console.log(`${name}应用卸载`)
   // 销毁
   if (app) {
     app.$destroy()

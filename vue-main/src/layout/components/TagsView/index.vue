@@ -168,7 +168,6 @@ export default class extends Vue {
   }
 
   private moveToCurrentTag() {
-    debugger
     this.$nextTick(() => {
       const tags = this.$refs.tag as any[] // TODO: better typescript support for router-link
 

@@ -64,5 +64,7 @@ router.afterEach((to: Route) => {
 
   // set page title
   document.title = to.meta.title
-  router.app.$mainApp.$emit('openTag', to)
+  if (router.app && router.app.$mainApp) {
+    router.app.$mainApp.$emit('openTag', to)
+  }
 })

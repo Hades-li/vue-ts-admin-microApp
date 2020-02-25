@@ -9,14 +9,24 @@
         :key="role"
       >{{ role }}</span>
     </div>
-    <div class="push-view">
-      <router-link
-        class="link"
-        to="dashboard/detail"
-      >
-        push to detail
-      </router-link>
-    </div>
+    <ul class="push-view">
+      <li>
+        <router-link
+          class="link"
+          to="/dashboard/detail"
+        >
+          push to detail
+        </router-link>
+      </li>
+      <li>
+        <el-button
+          type="text"
+          @click="pushToDetailWithChinese"
+        >
+          push to detail with chinese query
+        </el-button>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -34,6 +44,14 @@ export default class extends Vue {
 
   get roles() {
     return UserModule.roles
+  }
+  private pushToDetailWithChinese() {
+    this.$router.push({
+      path: '/dashboard/detail',
+      query: {
+        name: '中文'
+      }
+    })
   }
 }
 </script>

@@ -3071,6 +3071,11 @@ core-js@^2.4.0, core-js@^2.5.0, core-js@^2.6.5:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.11.tgz#38831469f9922bded8ee21c9dc46985e0399308c"
 
+core-js@^3.6.4:
+  version "3.6.4"
+  resolved "https://registry.npmjs.org/core-js/-/core-js-3.6.4.tgz#440a83536b458114b9cb2ac1580ba377dc470647"
+  integrity sha512-4paDGScNgZP2IXXilaffL9X7968RuvwlkK3xWtZRVqgd8SYNiVKRJvkFd1aqqEuPfN7E68ZHEp9hDj6lHj4Hyw==
+
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
@@ -8477,6 +8482,19 @@ q@^1.1.2:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
 
+qiankun-vue@^0.1.0:
+  version "0.1.7"
+  resolved "https://registry.npmjs.org/qiankun-vue/-/qiankun-vue-0.1.7.tgz#a1333d23fb72aeb15a09c590293703d5bf9bc7bf"
+  integrity sha512-ha0RFSmRqRu3tes59Io5d7lZZcZTV6IqZZiV+RHcw7bPnamVE70bQNBZycNgy5YUspjEOPdOoLsf2PVIyCFHaw==
+  dependencies:
+    core-js "^3.6.4"
+    qiankun "^1.3.14"
+    vue "^2.6.11"
+    vue-class-component "^7.2.2"
+    vue-property-decorator "^8.3.0"
+    vue-router "^3.1.5"
+    vuex "^3.1.2"
+
 qiankun@^1.3.14:
   version "1.3.14"
   resolved "https://registry.npm.taobao.org/qiankun/download/qiankun-1.3.14.tgz#9ba9db0c1bf3e1adb748151fdea840f9d5ffbec5"
@@ -10264,6 +10282,11 @@ vue-class-component@^7.1.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-7.1.0.tgz#b33efcb10e17236d684f70b1e96f1946ec793e87"
 
+vue-class-component@^7.2.2:
+  version "7.2.3"
+  resolved "https://registry.npmjs.org/vue-class-component/-/vue-class-component-7.2.3.tgz#a5b1abd53513a72ad51098752e2dedd499807cca"
+  integrity sha512-oEqYpXKaFN+TaXU+mRLEx8dX0ah85aAJEe61mpdoUrq0Bhe/6sWhyZX1JjMQLhVsHAkncyhedhmCdDVSasUtDw==
+
 vue-cli-plugin-element@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/vue-cli-plugin-element/-/vue-cli-plugin-element-1.0.1.tgz#34e58fb65b36cf59afaf14f503288e5e578b1554"
@@ -10323,7 +10346,7 @@ vue-loader@^15.7.0:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-property-decorator@^8.2.2:
+vue-property-decorator@^8.2.2, vue-property-decorator@^8.3.0:
   version "8.4.0"
   resolved "https://registry.npm.taobao.org/vue-property-decorator/download/vue-property-decorator-8.4.0.tgz#f4e641f84ca51a7b4721e236392a1efbb6eac00b"
   integrity sha1-9OZB+EylGntHIeI2OSoe+7bqwAs=
@@ -10333,6 +10356,11 @@ vue-property-decorator@^8.2.2:
 vue-router@^3.1.2:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.1.3.tgz#e6b14fabc0c0ee9fda0e2cbbda74b350e28e412b"
+
+vue-router@^3.1.5:
+  version "3.1.6"
+  resolved "https://registry.npmjs.org/vue-router/-/vue-router-3.1.6.tgz#45f5a3a3843e31702c061dd829393554e4328f89"
+  integrity sha512-GYhn2ynaZlysZMkFE5oCHRUTqE8BWs/a9YbKpNLi0i7xD6KG1EzDqpHQmv1F5gXjr8kL5iIVS8EOtRaVUEXTqA==
 
 vue-style-loader@^4.1.0:
   version "4.1.2"
@@ -10364,7 +10392,7 @@ vue-template-es2015-compiler@^1.6.0, vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
 
-vue@^2.6.10:
+vue@^2.6.10, vue@^2.6.11:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
 
@@ -10376,7 +10404,7 @@ vuex-module-decorators@^0.10.1:
   version "0.10.1"
   resolved "https://registry.yarnpkg.com/vuex-module-decorators/-/vuex-module-decorators-0.10.1.tgz#a34ebf7c2aec701d19ae60dea0a8f1620825fd9e"
 
-vuex@^3.1.1:
+vuex@^3.1.1, vuex@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.1.2.tgz#a2863f4005aa73f2587e55c3fadf3f01f69c7d4d"
 

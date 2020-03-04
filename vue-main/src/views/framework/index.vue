@@ -13,7 +13,7 @@ export default class extends Vue {
   private appHtml: string = ''
 
   mounted() {
-    // console.log(this.$qiankunVue)
+    console.log(this)
     this.$renderSuccess((html) => {
       // console.log(html)
     })

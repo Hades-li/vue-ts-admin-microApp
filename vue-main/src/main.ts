@@ -13,7 +13,7 @@ import router from '@/router'
 import '@/icons/components'
 import '@/permission'
 
-import QiankunVue from '@/plugins/qiankun-vue'
+import QiankunVue from 'qiankun-vue'
 
 Vue.use(ElementUI)
 Vue.use(SvgIcon, {

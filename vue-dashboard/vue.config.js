@@ -41,7 +41,7 @@ module.exports = {
       return args;
     });
     // 把子应用打包成 umd 库格式
-    config.output
+    config.output``
       .jsonpFunction(`webpackJsonp_${name}`)
       .library(`${name}-[name]`)
       .libraryTarget('umd')

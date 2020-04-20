@@ -5268,6 +5268,13 @@ import-html-entry@^1.3.9:
   dependencies:
     "@babel/runtime" "^7.7.2"
 
+import-html-entry@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.npmjs.org/import-html-entry/-/import-html-entry-1.6.0.tgz#d5a23adf28f155ee2710571ed4e85397752a753f"
+  integrity sha512-POG3BKtvaObl/jUs36h1b7P8jrbHWCNxarjvdXUH7GkueO80AoXbNF+u9pIrDEjkyUiw1aOmlVBmhcHFOr4BQA==
+  dependencies:
+    "@babel/runtime" "^7.7.2"
+
 import-local@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/import-local/-/import-local-1.0.0.tgz#5e4ffdc03f4fe6c009c6729beb29631c2f8227bc"
@@ -8482,13 +8489,13 @@ q@^1.1.2:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
 
-qiankun-vue@^0.1.0:
-  version "0.1.7"
-  resolved "https://registry.npmjs.org/qiankun-vue/-/qiankun-vue-0.1.7.tgz#a1333d23fb72aeb15a09c590293703d5bf9bc7bf"
-  integrity sha512-ha0RFSmRqRu3tes59Io5d7lZZcZTV6IqZZiV+RHcw7bPnamVE70bQNBZycNgy5YUspjEOPdOoLsf2PVIyCFHaw==
+qiankun-vue@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.npmjs.org/qiankun-vue/-/qiankun-vue-0.2.1.tgz#59f2edbbf2caa5e67e9998df838d2a5b8296897c"
+  integrity sha512-n878rRlVIy8ND720lhXkg6jKoYpL7NUSVwkTQdH8LhWT7tBQbT+l8aZTu0+f0uBr4GHR2GTqbEoqwRCoxzeI6Q==
   dependencies:
     core-js "^3.6.4"
-    qiankun "^1.3.14"
+    qiankun "^2.0.2"
     vue "^2.6.11"
     vue-class-component "^7.2.2"
     vue-property-decorator "^8.3.0"
@@ -8504,6 +8511,17 @@ qiankun@^1.3.14:
     import-html-entry "^1.3.9"
     lodash "^4.17.11"
     single-spa "^4.3.4"
+    tslib "^1.10.0"
+
+qiankun@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.npmjs.org/qiankun/-/qiankun-2.0.2.tgz#e62252c42eaaf6cd0b5e1f556b5545e747f3de49"
+  integrity sha512-sPb1nU0s3CfBevINgmZd/7T/64amQS1Tn1uMb1ymEDJX6hpW5BYqCKoGiNWOxwD+rbi+SIuMS9YT2LIsIyQBYQ==
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    import-html-entry "^1.6.0"
+    lodash "^4.17.11"
+    single-spa "^5.3.1"
     tslib "^1.10.0"
 
 qs@6.7.0:
@@ -9245,6 +9263,11 @@ simple-swizzle@^0.2.2:
 single-spa@^4.3.4:
   version "4.4.3"
   resolved "https://registry.npm.taobao.org/single-spa/download/single-spa-4.4.3.tgz#4dff3a17f633b732691cff25cf0bf0897ecdfd37"
+
+single-spa@^5.3.1:
+  version "5.3.3"
+  resolved "https://registry.npmjs.org/single-spa/-/single-spa-5.3.3.tgz#df4f09f61fb3f3369b7fa0996484e10555cc7637"
+  integrity sha512-pM/Gzxo/jlGMnBQdcp9lV87JRt/VsrbVZV3Dg1UQoAPzchqqDZB7oHXLFHiVpkd4HMDpVY+umSq+eQ6tAnTB8g==
 
 sisteransi@^0.1.1:
   version "0.1.1"

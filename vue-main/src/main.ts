@@ -27,12 +27,12 @@ const qiankunVue = new QiankunVue([
   {
     name: 'dashboard',
     entry: '//localhost:5001',
-    activeUrl: '/dashboard'
+    activeRule: '/dashboard'
   },
   {
     name: 'example',
     entry: '//localhost:5002',
-    activeUrl: '/example'
+    activeRule: '/example'
   }
 ])
 

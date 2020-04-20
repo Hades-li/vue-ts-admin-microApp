@@ -1,26 +1,24 @@
 <template>
   <div class="framework">
-    <div id="app" />
+    <qiankun
+      @appMounted="afterMounted"
+      @appUnmounted="afterUnmounted"
+    />
   </div>
 </template>
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 
-@Component({
-  name: 'Framework'
-})
+  @Component({
+    name: 'Framework'
+  })
 export default class extends Vue {
-  private appHtml: string = ''
+  afterMounted(app: any) {
+    console.log('')
+  }
 
-  mounted() {
-    console.log(this)
-    this.$renderSuccess((html) => {
-      // console.log(html)
-    })
-    this.$afterMounted((app) => {
-      console.log(app)
-    })
-    this.$qiankunVue.start()
+  afterUnmounted(app: any) {
+
   }
 }
 </script>

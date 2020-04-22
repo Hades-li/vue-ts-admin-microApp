@@ -8,10 +8,10 @@
       class="tags-view-wrapper"
     >
       <router-link
-        v-for="tag in visitedViews"
+        v-for="(tag, index) in visitedViews"
         ref="tag"
-        :key="tag.path"
-        :class="isActive(tag) ? 'active' : ''"
+        :key="index"
+        :class="index === curTagIndex ? 'active' : ''"
         :to="{path: tag.path, query: tag.query, fullPath: tag.fullPath}"
         tag="span"
         class="tags-view-item"
@@ -38,7 +38,7 @@
         v-if="!isAffix(selectedTag)"
         @click="closeSelectedTag(selectedTag)"
       >
-       关闭
+        关闭
       </li>
       <li @click="closeOthersTags">
         关闭其他
@@ -81,11 +81,17 @@ export default class extends Vue {
     return []
   }
 
+  // 當前路由標籤索引值
+  get curTagIndex() {
+    const index = this.visitedViews.findIndex(item => item.path === this.curTag.path)
+    return index
+  }
+
   @Watch('$route')
   private onRouteChange(route: Route) {
-    console.log(route)
-    // this.addTags()
-    // this.moveToCurrentTag()
+    console.log('路由监听->', route)
+    this.addTags()
+    this.moveToCurrentTag()
   }
 
   @Watch('visible')
@@ -101,7 +107,7 @@ export default class extends Vue {
     // this.initTags()
     // this.addTags()
     this.$root.$on('openTag', (to: Route) => {
-      this.addTagsFromSubApp(to)
+      // this.addTagsFromSubApp(to)
     })
   }
 
@@ -153,6 +159,7 @@ export default class extends Vue {
       query: Object.assign({}, route.query),
       meta: Object.assign({}, route.meta)
     }
+    debugger
     if (tag.name) {
       TagsViewModule.addView(tag)
       this.moveToCurrentTag()
@@ -163,6 +170,7 @@ export default class extends Vue {
     const { name } = this.$route
     if (name) {
       TagsViewModule.addView(this.$route)
+      this.curTag = this.$route
     }
     return false
   }

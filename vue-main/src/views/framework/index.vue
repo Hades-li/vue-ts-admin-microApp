@@ -1,8 +1,8 @@
 <template>
   <div class="framework">
     <qiankun
-      @appMounted="afterMounted"
-      @appUnmounted="afterUnmounted"
+      @app-mounted="afterMounted"
+      @app-unmounted="afterUnmounted"
     />
   </div>
 </template>
@@ -14,7 +14,7 @@ import { Component, Vue } from 'vue-property-decorator'
   })
 export default class extends Vue {
   afterMounted(app: any) {
-    console.log('')
+    console.log(app)
   }
 
   afterUnmounted(app: any) {
